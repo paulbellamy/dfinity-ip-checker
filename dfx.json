@@ -1,0 +1,35 @@
+{
+  "canisters": {
+    "dfinity_api": {
+      "main": "src/dfinity_api/main.mo",
+      "type": "motoko"
+    },
+    "dfinity_api_assets": {
+      "dependencies": [
+        "dfinity_api"
+      ],
+      "frontend": {
+        "entrypoint": "src/dfinity_api_assets/src/index.html"
+      },
+      "source": [
+        "src/dfinity_api_assets/assets",
+        "dist/dfinity_api_assets/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.8.3",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
