@@ -18,10 +18,21 @@ actor {
   };
 
   public query func http_request(request: HttpRequest) : async HttpResponse {
+    for (header in request.headers.vals()) {
+      let (key, value) = header;
+      if (key == "x-real-ip") {
+        return {
+          status_code = 200;
+          headers = [];
+          body = Text.encodeUtf8(value);
+        };
+      }
+    };
+
     return {
-      status_code = 200;
+      status_code = 500;
       headers = [];
-      body = Text.encodeUtf8("Method: " # request.method # "\nURL: " # request.url);
+      body = Text.encodeUtf8("");
     };
   };
 

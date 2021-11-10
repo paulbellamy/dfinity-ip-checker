@@ -3,19 +3,6 @@
     "dfinity_api": {
       "main": "src/dfinity_api/main.mo",
       "type": "motoko"
-    },
-    "dfinity_api_assets": {
-      "dependencies": [
-        "dfinity_api"
-      ],
-      "frontend": {
-        "entrypoint": "src/dfinity_api_assets/src/index.html"
-      },
-      "source": [
-        "src/dfinity_api_assets/assets",
-        "dist/dfinity_api_assets/"
-      ],
-      "type": "assets"
     }
   },
   "defaults": {
